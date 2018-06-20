@@ -9,16 +9,6 @@ package Coding_Interviews;
  * https://www.nowcoder.com/practice/8a19cbe657394eeaac2f6ea9b0f6fcf6?tpId=13&tqId=11157&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking
  */
 public class ReConstructBinaryTree {
-    private static class TreeNode
-    {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x)
-        {
-            val=x;
-        }
-    }
     private TreeNode reConstructBinaryTree(int[] pre,int[] in)
     {
         if(pre==null)

@@ -11,7 +11,7 @@ package Coding_Interviews;
 public class Fibonacci {
     public int solution1(int n)
     {
-        //第一种方法，递归，很容易导致内存溢出
+        //第一种方法，递归，很容易导致栈内存溢出
         if(n==1||n==2)
         {
             return 1;
@@ -23,6 +23,7 @@ public class Fibonacci {
     }
     public int solution2(int n)
     {
+        //第二种方法，使用循环函数来代替递归
         if(n==1||n==2)
         {
             return 1;
