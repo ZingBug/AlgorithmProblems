@@ -1,7 +1,10 @@
 package Coding_Interviews;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
@@ -50,7 +53,60 @@ public class PrintTreeFromTopToBottom {
         return list;
     }
 
-    public static void main(String[] args)
+    public ArrayList<ArrayList<Integer>> Print(TreeNode pRoot)
+    {
+        ArrayList<ArrayList<Integer>> lists=new ArrayList<>();
+        if(pRoot==null)
+        {
+            return lists;
+        }
+        Queue<TreeNode> queue1=new LinkedBlockingQueue<>();
+        Queue<TreeNode> queue2=new LinkedBlockingQueue<>();
+        ((LinkedBlockingQueue<TreeNode>) queue1).offer(pRoot);
+        while (!queue1.isEmpty()||!queue2.isEmpty())
+        {
+            ArrayList<Integer> list=new ArrayList<>();
+            if(!queue1.isEmpty())
+            {
+                while (!queue1.isEmpty())
+                {
+                    TreeNode node=queue1.poll();
+                    list.add(node.val);
+                    //从左到右
+                    if(node.left!=null)
+                    {
+                        ((LinkedBlockingQueue<TreeNode>) queue2).offer(node.left);
+                    }
+                    if(node.right!=null)
+                    {
+                        ((LinkedBlockingQueue<TreeNode>) queue2).offer(node.right);
+                    }
+                }
+            }
+            else if(!queue2.isEmpty())
+            {
+                while (!queue2.isEmpty())
+                {
+                    TreeNode node=queue2.poll();
+                    list.add(node.val);
+                    //从左到右
+                    if(node.left!=null)
+                    {
+                        ((LinkedBlockingQueue<TreeNode>) queue1).offer(node.left);
+                    }
+                    if(node.right!=null)
+                    {
+                        ((LinkedBlockingQueue<TreeNode>) queue1).offer(node.right);
+                    }
+                }
+            }
+            lists.add(list);
+        }
+        return lists;
+
+    }
+
+    private static void test1()
     {
         PrintTreeFromTopToBottom p=new PrintTreeFromTopToBottom();
         /**
@@ -71,5 +127,38 @@ public class PrintTreeFromTopToBottom {
         {
             System.out.print(val+" ");
         }
+    }
+
+    private static void test2()
+    {
+        PrintTreeFromTopToBottom p=new PrintTreeFromTopToBottom();
+        /**
+         * root1
+         *      1
+         *    2   3
+         *  4  5 6  7
+         */
+        TreeNode root1=new TreeNode(1);
+        root1.left=new TreeNode(2);
+        root1.right=new TreeNode(3);
+        root1.left.left=new TreeNode(4);
+        root1.left.right=new TreeNode(5);
+        root1.right.left=new TreeNode(6);
+        root1.right.right=new TreeNode(7);
+        ArrayList<ArrayList<Integer>> lists=p.Print(root1);
+        for(ArrayList<Integer> list:lists)
+        {
+            for(int val:list)
+            {
+                System.out.print(val+" ");
+            }
+            System.out.println();
+        }
+    }
+
+
+    public static void main(String[] args)
+    {
+        test2();
     }
 }
