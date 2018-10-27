@@ -1,13 +1,13 @@
-package CodingInterviewGuide;
+package Coding_Interview_Guide.LinkedList;
 
 /**
- * 双向节点
- * Created by ZingBug on 2018/8/8.
+ * Created by ZingBug on 2018/10/19.
  */
 public class DoubleNode {
     public int value;
     public DoubleNode last;
     public DoubleNode next;
+
     public DoubleNode(int data)
     {
         this.value=data;

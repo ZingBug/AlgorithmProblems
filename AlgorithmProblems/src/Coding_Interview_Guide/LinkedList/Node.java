@@ -1,8 +1,7 @@
-package CodingInterviewGuide;
+package Coding_Interview_Guide.LinkedList;
 
 /**
- * 单向节点
- * Created by ZingBug on 2018/8/8.
+ * Created by ZingBug on 2018/10/19.
  */
 public class Node {
     public int value;

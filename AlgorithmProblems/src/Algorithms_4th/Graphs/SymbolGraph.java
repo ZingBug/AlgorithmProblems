@@ -1,6 +1,6 @@
 package Algorithms_4th.Graphs;
 
-import Searching.BST;
+import Algorithms_4th.Searching.BST;
 import edu.princeton.cs.algs4.In;
 
 import java.io.BufferedInputStream;

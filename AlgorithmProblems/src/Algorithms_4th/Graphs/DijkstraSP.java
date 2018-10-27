@@ -1,6 +1,6 @@
 package Algorithms_4th.Graphs;
 
-import PriorityQueues.IndexMinPQ;
+import Algorithms_4th.PriorityQueues.IndexMinPQ;
 import Algorithms_4th.Base.In;
 
 /**
