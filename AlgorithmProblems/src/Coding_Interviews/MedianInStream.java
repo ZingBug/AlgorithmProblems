@@ -51,11 +51,11 @@ public class MedianInStream {
     {
         if(count%2==0)
         {
-            return new Double((maxHeap.peek()+minHeap.peek())/2.0);
+            return (maxHeap.peek()+minHeap.peek())/2.0;
         }
         else
         {
-            return new Double(minHeap.peek());
+            return (double)minHeap.peek();
         }
     }
 

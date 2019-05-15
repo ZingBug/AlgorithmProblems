@@ -1,6 +1,8 @@
 package Coding_Interview_Guide.LinkedList;
 
 /**
+ * 两个单链表相交的一系列问题
+ * Page62
  * Created by ZingBug on 2018/10/27.
  */
 public class GetIntersectNode {

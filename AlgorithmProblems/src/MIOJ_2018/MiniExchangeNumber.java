@@ -1,7 +1,5 @@
 package MIOJ_2018;
 
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
-
 /**
  * 最小交换次数
  * 描述

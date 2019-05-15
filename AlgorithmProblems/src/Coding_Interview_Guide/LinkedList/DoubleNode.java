@@ -5,8 +5,8 @@ package Coding_Interview_Guide.LinkedList;
  */
 public class DoubleNode {
     public int value;
-    public DoubleNode last;
-    public DoubleNode next;
+    public DoubleNode left;
+    public DoubleNode right;
 
     public DoubleNode(int data)
     {

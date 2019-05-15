@@ -1,11 +1,12 @@
-package Coding_Interview_Guide.LinkedList;
+package Coding_Interview_Guide.BinaryTree;
 
 /**
- * Created by ZingBug on 2018/10/19.
+ * Created by ZingBug on 2018/11/11.
  */
 public class Node {
     public int value;
-    public Node next;
+    public Node left;
+    public Node right;
 
     public Node(int data) {
         this.value = data;
